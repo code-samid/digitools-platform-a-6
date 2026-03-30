@@ -1,15 +1,44 @@
 export const ProductCard = ({ product, addToCart }) => (
-  <div className="border p-4 rounded shadow">
-    <h2>{product.icon} {product.name}</h2>
-    <p>{product.description}</p>
-    <p>${product.price}/{product.period}</p>
-    <p className="text-purple-500">{product.tagType}</p>
-    <ul>
-      {product.features.map((f, i) => <li key={i}>✔ {f}</li>)}
+  <div className="bg-white border rounded-2xl p-6 shadow-sm hover:shadow-md transition relative">
+
+    {/* TAG */}
+    <span className="absolute top-4 right-4 text-xs bg-purple-100 text-purple-600 px-3 py-1 rounded-full">
+      {product.tagType}
+    </span>
+
+    {/* ICON */}
+    <div className="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-full mb-4">
+      {product.icon}
+    </div>
+
+    {/* TITLE */}
+    <h2 className="font-semibold text-lg">{product.name}</h2>
+
+    {/* DESC */}
+    <p className="text-sm text-gray-500 mt-2">{product.description}</p>
+
+    {/* PRICE */}
+    <h3 className="mt-4 font-bold text-xl">
+      ${product.price}
+      <span className="text-sm text-gray-400">/{product.period}</span>
+    </h3>
+
+    {/* FEATURES */}
+    <ul className="text-sm mt-4 space-y-2">
+      {product.features.map((f, i) => (
+        <li key={i} className="flex items-center gap-2 text-gray-600">
+          <span className="text-green-500">✔</span> {f}
+        </li>
+      ))}
     </ul>
+
+    {/* BUTTON */}
     <button
-      className="btn btn-primary w-full mt-3"
       onClick={() => addToCart(product)}
-    >Buy Now</button>
+      className="w-full mt-6 py-3 rounded-full text-white font-medium 
+      bg-gradient-to-r to-purple-600 from-indigo-600 text-white"
+    >
+      Buy Now
+    </button>
   </div>
 );

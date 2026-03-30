@@ -7,6 +7,7 @@ import { products } from "./data/products"; // ✅ THIS LINE
 import { Navbar } from "./components/Navbar";
 import { Banner } from "./components/Banner";
 import { Stats } from "./components/Stats";
+
 import { Products } from "./components/Products";
 import { Cart } from "./components/Cart";
 import { Steps } from "./components/Steps";
@@ -38,13 +39,15 @@ export default function App() {
       <Banner />
       <Stats />
 
-      <div className="flex justify-center gap-4 my-5">
-        <button onClick={() => setView("products")} className="btn">Products</button>
-        <button onClick={() => setView("cart")} className="btn">Cart</button>
-      </div>
+
 
       {view === "products" ? (
-        <Products addToCart={addToCart} products={products} />
+        <Products
+          addToCart={addToCart}
+          products={products}
+          setView={setView}          // ✅ ADD THIS
+          cartCount={cart.length}   // ✅ ADD THIS
+        />
       ) : (
         <Cart cart={cart} remove={remove} checkout={checkout} />
       )}
