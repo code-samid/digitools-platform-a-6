@@ -61,6 +61,8 @@ export default function App() {
           products={products}
           setView={setView}
           cartCount={cart.length}
+          view={view}
+          
         />
       ) : (
         <Cart cart={cart} remove={remove} checkout={checkout} />

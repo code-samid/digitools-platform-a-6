@@ -1,35 +1,49 @@
 import { ProductCard } from "./ProductCard";
 
-export const Products = ({ addToCart, products, setView, cartCount }) => (
-  <div className="px-10 py-20 bg-gray-50 text-center">
+export const Products = ({ addToCart, products, setView, cartCount, view }) => (
+    <div className="px-10 py-20 bg-gray-50 text-center">
 
-    <h2 className="text-3xl font-bold">Premium Digital Tools</h2>
-    <p className="text-gray-500 mt-2 max-w-xl mx-auto">
-      Choose from our curated collection of premium digital products designed
-      to boost your productivity and creativity.
-    </p>
+        <h2 className="text-3xl font-bold">Premium Digital Tools</h2>
+        <p className="text-gray-500 mt-2 max-w-xl mx-auto">
+            Choose from our curated collection of premium digital products designed
+            to boost your productivity and creativity.
+        </p>
 
-    {/* TOGGLE */}
-    <div className="flex justify-center mt-6 gap-4">
-      <button
-        onClick={() => setView("products")}
-        className="px-5 py-2 rounded-full bg-gradient-to-r bg-gradient-to-r to-purple-600 from-indigo-600 text-white"
-      >
-        Products
-      </button>
+        {/* TOGGLE (FIXED WITH ACTIVE STATE) */}
+        <div className="flex justify-center mt-6">
+            <div className="bg-gray-100 p-1 rounded-full flex gap-1">
 
-      <button
-        onClick={() => setView("cart")}
-        className="px-5 py-2 rounded-full border text-gray-600"
-      >
-        Cart ({cartCount})
-      </button>
+                {/* PRODUCTS BUTTON */}
+                <button
+                    onClick={() => setView("products")}
+                    className={`px-5 py-2 rounded-full text-sm transition ${view === "products"
+                            ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white"
+                            : "text-gray-600"
+                        }`}
+                >
+                    Products
+                </button>
+
+                {/* CART BUTTON */}
+                <button
+                    onClick={() => setView("cart")}
+                    className={`px-5 py-2 rounded-full text-sm transition-all duration-300 ease-in-out ${view === "cart"
+                            ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md scale-105"
+                            : "text-gray-600 hover:bg-white hover:shadow"
+                        }`}
+                >
+                    Cart ({cartCount})
+                </button>
+
+            </div>
+        </div>
+
+        {/* PRODUCTS GRID */}
+        <div className="grid md:grid-cols-3 gap-8 mt-12">
+            {products.map((p) => (
+                <ProductCard key={p.id} product={p} addToCart={addToCart} />
+            ))}
+        </div>
+
     </div>
-
-    <div className="grid md:grid-cols-3 gap-8 mt-12">
-      {products.map((p) => (
-        <ProductCard key={p.id} product={p} addToCart={addToCart} />
-      ))}
-    </div>
-  </div>
 );

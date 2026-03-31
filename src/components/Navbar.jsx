@@ -1,10 +1,8 @@
-export const Navbar = () => (
+export const Navbar = ({ cartCount, setView }) => (
   <div className="flex justify-between items-center px-12 py-5 bg-white">
-    
-    {/* Logo */}
+
     <h1 className="text-2xl font-bold text-purple-600">DigiTools</h1>
 
-    {/* Menu */}
     <div className="hidden md:flex items-center gap-8 text-gray-600 text-sm">
       <span>Products</span>
       <span>Features</span>
@@ -13,10 +11,25 @@ export const Navbar = () => (
       <span>FAQ</span>
     </div>
 
-    {/* Right side */}
     <div className="flex items-center gap-5">
 
-      <span><img src="./assets/products/shopping-cart.png" alt="" /></span>
+      {/* ✅ CART ICON FIX */}
+      <div 
+        onClick={() => setView("cart")}
+        className="relative cursor-pointer"
+      >
+        <img 
+          src="/assets/products/shopping-cart.png" 
+          className="w-6"
+        />
+
+        {/* COUNT BADGE */}
+        {cartCount > 0 && (
+          <span className="absolute -top-2 -right-2 bg-purple-600 text-white text-xs px-1.5 rounded-full">
+            {cartCount}
+          </span>
+        )}
+      </div>
 
       <span className="text-gray-600 text-sm cursor-pointer">Login</span>
 
