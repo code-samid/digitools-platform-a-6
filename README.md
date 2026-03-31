@@ -37,7 +37,7 @@ A simple pricing section is included with different plans. It clearly shows what
 
 To run the project locally:
 
-npm install
+npm install <br>
 npm run dev
 
 ---
