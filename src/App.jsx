@@ -16,6 +16,7 @@ import { CTASection } from "./components/CTASection";
 import { Footer } from "./components/Footer";
 import { Container } from "./components/Container";
 
+
 export default function App() {
   const [view, setView] = useState("products");
   const [cart, setCart] = useState([]);
@@ -36,52 +37,50 @@ export default function App() {
   };
 
   return (
-  <div>
+    <div>
 
-    {/* FULL WIDTH */}
-    <Navbar cartCount={cart.length} />
-
-
-    {/* CENTERED */}
-    <Container>
-      <Banner />
-    </Container>
+      {/* FULL WIDTH */}
+      <Navbar cartCount={cart.length} />
 
 
-    {/* FULL WIDTH (UNDER BANNER) */}
-    <Stats />
+      {/* CENTERED */}
+      <Container>
+        <Banner />
+      </Container>
 
 
-    {/* CENTERED */}
-    <Container>
+      {/* FULL WIDTH (UNDER BANNER) */}
+      <Stats />
 
-      {view === "products" ? (
+
+      {/* CENTERED */}
+      <Container>
+
         <Products
           addToCart={addToCart}
           products={products}
           setView={setView}
           cartCount={cart.length}
           view={view}
-          
+          cart={cart}
+          remove={remove}
+          checkout={checkout}
         />
-      ) : (
-        <Cart cart={cart} remove={remove} checkout={checkout} />
-      )}
 
-      <Steps />
+        <Steps />
 
-      <Pricing />
+        <Pricing />
 
-    </Container>
+      </Container>
 
 
-    {/* FULL WIDTH */}
-    <CTASection />
+      {/* FULL WIDTH */}
+      <CTASection />
 
-    <Footer />
+      <Footer />
 
-    <ToastContainer />
+      <ToastContainer />
 
-  </div>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 export const CTASection = () => {
   return (
-    <section className="bg-gradient-to-r from-purple-600 via-purple-700 to-pink-600 text-white py-24">
+    <section className="bg-gradient-to-r to-purple-600 from-indigo-600 text-white py-24">
 
       <div className="max-w-4xl mx-auto text-center px-6">
 

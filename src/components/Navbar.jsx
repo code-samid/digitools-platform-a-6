@@ -13,10 +13,10 @@ export const Navbar = ({ cartCount, setView }) => (
 
     <div className="flex items-center gap-5">
 
-      {/* ✅ CART ICON FIX */}
+      {/* CART ICON FIX */}
       <div 
         onClick={() => setView("cart")}
-        className="relative cursor-pointer"
+        className="relative cursor-pointer hover:scale-110 transition"
       >
         <img 
           src="/assets/products/shopping-cart.png" 
