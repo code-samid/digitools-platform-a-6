@@ -1,16 +1,54 @@
-# React + Vite
+# Premium Digital Tools
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
 
-Currently, two official plugins are available:
+This project is a simple and clean web application where users can explore and purchase digital products. The goal was to build a smooth and user-friendly interface that makes browsing and buying easy.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Users can view different products, add them to a cart, and see the total price before checkout. The design focuses on clarity and ease of use.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies Used
 
-## Expanding the ESLint configuration
+* React.js
+* Tailwind CSS
+* React Toastify
+* Vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Features
+
+### 1. Product Listing
+
+The application displays a list of digital products in a clean grid layout. Each product has basic information and an option to add it to the cart.
+
+### 2. Cart Functionality
+
+Users can add items to the cart, remove them, and see the total price update instantly. The cart view helps users manage their selected items easily.
+
+### 3. Pricing Section
+
+A simple pricing section is included with different plans. It clearly shows what each plan offers and highlights the most popular option.
+
+---
+
+## Getting Started
+
+To run the project locally:
+
+npm install
+npm run dev
+
+---
+
+## Live Demo
+
+https://digitools-platform-a-6.netlify.app/
+
+---
+
+## Author
+
+Samid Ahmed
+GitHub: https://github.com/code-samid/digitools-platform-a-6
