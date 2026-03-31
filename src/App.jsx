@@ -12,7 +12,9 @@ import { Products } from "./components/Products";
 import { Cart } from "./components/Cart";
 import { Steps } from "./components/Steps";
 import { Pricing } from "./components/Pricing";
+import { CTASection } from "./components/CTASection";
 import { Footer } from "./components/Footer";
+import { Container } from "./components/Container";
 
 export default function App() {
   const [view, setView] = useState("products");
@@ -34,29 +36,50 @@ export default function App() {
   };
 
   return (
-    <div>
-      <Navbar cartCount={cart.length} />
+  <div>
+
+    {/* FULL WIDTH */}
+    <Navbar cartCount={cart.length} />
+
+
+    {/* CENTERED */}
+    <Container>
       <Banner />
-      <Stats />
+    </Container>
 
 
+    {/* FULL WIDTH (UNDER BANNER) */}
+    <Stats />
+
+
+    {/* CENTERED */}
+    <Container>
 
       {view === "products" ? (
         <Products
           addToCart={addToCart}
           products={products}
-          setView={setView}          // ✅ ADD THIS
-          cartCount={cart.length}   // ✅ ADD THIS
+          setView={setView}
+          cartCount={cart.length}
         />
       ) : (
         <Cart cart={cart} remove={remove} checkout={checkout} />
       )}
 
       <Steps />
-      <Pricing />
-      <Footer />
 
-      <ToastContainer />
-    </div>
+      <Pricing />
+
+    </Container>
+
+
+    {/* FULL WIDTH */}
+    <CTASection />
+
+    <Footer />
+
+    <ToastContainer />
+
+  </div>
   );
 }

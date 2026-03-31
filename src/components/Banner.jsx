@@ -16,8 +16,9 @@ export const Banner = () => (
 
       {/* Description */}
       <p className="text-gray-500 mt-5">
-        Access premium AI tools, design assets, templates, and productivity software—
-        all in one place. Start creating faster today.
+        Access premium AI tools, design assets, templates, and productivity <br /> software—
+        all in one place. Start creating faster today. <br />
+        Explore Products
       </p>
 
       {/* Buttons */}
@@ -33,6 +34,6 @@ export const Banner = () => (
     </div>
 
     {/* RIGHT IMAGE */}
-    <div className="w-[420px] h-[420px] bg-gray-200 rounded-xl mt-10 md:mt-0"></div>
+    <div className="mb-[60px] w-[420px] h-[420px] bg-gray-200 rounded-xl mt-10 md:mt-0"><img src="./assets/banner.png" alt="banner" /></div>
   </div>
 );

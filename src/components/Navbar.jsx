@@ -15,6 +15,9 @@ export const Navbar = () => (
 
     {/* Right side */}
     <div className="flex items-center gap-5">
+
+      <span><img src="./assets/products/shopping-cart.png" alt="" /></span>
+
       <span className="text-gray-600 text-sm cursor-pointer">Login</span>
 
       <button className="bg-gradient-to-r to-purple-600 from-indigo-600 text-white px-5 py-2 rounded-full text-sm font-medium">
