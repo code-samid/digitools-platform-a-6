@@ -17,7 +17,7 @@ export const Products = ({
             {/* HEADER */}
             <h2 className="text-3xl font-bold">Premium Digital Tools</h2>
             <p className="text-gray-500 mt-2 max-w-xl mx-auto">
-                Choose from our curated collection of premium digital products designed
+                Choose from our curated collection of premium digital products designed <br />
                 to boost your productivity and creativity.
             </p>
 

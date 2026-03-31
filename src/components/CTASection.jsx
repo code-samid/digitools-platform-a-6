@@ -11,8 +11,7 @@ export const CTASection = () => {
 
         {/* Subtitle */}
         <p className="text-lg text-purple-100 mb-10">
-          Join thousands of professionals who are already using Digitools to work smarter.
-          Start your free trial today.
+          Join thousands of professionals who are already using Digitools to work smarter. <br />Start your free trial today.
         </p>
 
         {/* Buttons */}
